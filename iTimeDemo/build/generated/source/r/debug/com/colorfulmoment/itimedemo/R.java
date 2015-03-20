@@ -1583,6 +1583,7 @@ containing a value of this type.
         public static final int expand_activities_button=0x7f08002b;
         public static final int expanded_menu=0x7f080031;
         public static final int friday=0x7f08001e;
+        public static final int group_list=0x7f08004d;
         public static final int home=0x7f080004;
         public static final int homeAsUp=0x7f08000d;
         public static final int icon=0x7f08002f;
@@ -1621,13 +1622,16 @@ containing a value of this type.
         public static final int submit_area=0x7f080045;
         public static final int sunday=0x7f080021;
         public static final int tabMode=0x7f08000b;
+        public static final int text_group_name=0x7f08004f;
+        public static final int text_members_count=0x7f080051;
+        public static final int text_other_info=0x7f080050;
         public static final int thursday=0x7f080022;
         public static final int title=0x7f080030;
         public static final int tuesday=0x7f080023;
         public static final int up=0x7f080008;
         public static final int useLogo=0x7f080012;
         public static final int wednesday=0x7f080024;
-        public static final int weekView=0x7f08004d;
+        public static final int weekView=0x7f08004e;
         public static final int withText=0x7f08001a;
         public static final int wrap_content=0x7f08001d;
     }
@@ -1665,8 +1669,9 @@ containing a value of this type.
         public static final int fragment_group=0x7f03001b;
         public static final int fragment_personal=0x7f03001c;
         public static final int fragment_today=0x7f03001d;
-        public static final int ray_menu=0x7f03001e;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static final int list_item_group=0x7f03001e;
+        public static final int ray_menu=0x7f03001f;
+        public static final int support_simple_spinner_dropdown_item=0x7f030020;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0a0000;

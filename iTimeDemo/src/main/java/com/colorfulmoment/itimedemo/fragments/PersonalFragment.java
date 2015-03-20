@@ -53,7 +53,7 @@ public class PersonalFragment extends Fragment implements WeekView.MonthChangeLi
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
         List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
 
-        User user = Stat.USERS.get(1);
+        User user = Stat.USERS.get(0);
         for(int i = 0; i < user.getEventCount(); i++) {
             WeekViewEvent event = user.getWeekViewEvent(i);
             if(event.getStartTime().get(Calendar.MONTH) == newMonth) {

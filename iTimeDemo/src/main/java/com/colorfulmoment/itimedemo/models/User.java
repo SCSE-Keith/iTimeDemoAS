@@ -42,6 +42,10 @@ public class User {
         return mEvent.size();
     }
 
+    public Group getGroup(int index){
+        return mGroups.get(index);
+    }
+
     public int getGroupCount(){
         return mGroups.size();
     }

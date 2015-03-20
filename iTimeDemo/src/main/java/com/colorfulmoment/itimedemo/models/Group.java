@@ -8,7 +8,8 @@ public class Group {
     private String mName;
 //    private Date mFoundationTimestamp;
     private String mDescription;
-    private ArrayList<User> mLeaders;
+    private User mLeader;
+    private ArrayList<User> mMembers;
     private ArrayList<GroupEvent> mGroupEvent;
     private ArrayList<Activity> mActivity;
 
@@ -21,8 +22,8 @@ public class Group {
         this.mName = name;
 //        this.mFoundationTimestamp = timeStamp;
         this.mDescription = description;
-        this.mLeaders = new ArrayList<User>();
-        mLeaders.add(leader);
+        this.mLeader = leader;
+        this.mMembers = new ArrayList<User>();
         this.mGroupEvent = new ArrayList<GroupEvent>();
         this.mActivity = new ArrayList<Activity>();
     }
@@ -52,4 +53,41 @@ public class Group {
     public void setDescription(String des){
         mDescription = des;
     }
+
+    public int getMemberCount(){
+        return mMembers.size() + 1;
+    }
+
+    public void joinIn(User newMember){
+        mMembers.add(newMember);
+    }
+
+    public void changeLeader(User newLeader){
+        mLeader = newLeader;
+    }
+
+    public void addGroupEvent(GroupEvent newEvent){
+        mGroupEvent.add(newEvent);
+    }
+
+    public GroupEvent getGroupEvent(int index){
+        return mGroupEvent.get(index);
+    }
+
+    public int getGroupEventCount(){
+        return mGroupEvent.size();
+    }
+
+    public void addActivity(Activity newActivity){
+        mActivity.add(newActivity);
+    }
+
+    public Activity getActivity(int index){
+        return mActivity.get(index);
+    }
+
+    public int getActivityCount(){
+        return mActivity.size();
+    }
+
 }
