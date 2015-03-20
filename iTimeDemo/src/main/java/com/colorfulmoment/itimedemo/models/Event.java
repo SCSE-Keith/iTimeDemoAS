@@ -1,24 +1,23 @@
 package com.colorfulmoment.itimedemo.models;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public abstract class Event {
     private long mId;
     private String mTitle;
-    private Date mStartTime;
-    private Date mEndTime;
+    private Calendar mStartTime;
+    private Calendar mEndTime;
     private String mDescription;
-    private boolean isPrivate;
     private boolean enableAlarm;
     private int mAlarmTime;
 
-    public Event(long mId, String mTitle, Date mStartTime, Date mEndTime, String mDescription, boolean isPrivate, boolean enableAlarm, int mAlarmTime){
+    public Event(long mId, String mTitle, Calendar mStartTime, Calendar mEndTime, String mDescription, boolean enableAlarm, int mAlarmTime){
         this.mId = mId;
         this.mTitle = mTitle;
         this.mStartTime = mStartTime;
         this.mEndTime = mEndTime;
         this.mDescription = mDescription;
-        this.isPrivate = isPrivate;
         this.enableAlarm = enableAlarm;
         this.mAlarmTime = mAlarmTime;
     }
@@ -31,7 +30,7 @@ public abstract class Event {
         mTitle = title;
     }
 
-    public void setStartTime(Date startTime, Date endTime){
+    public void setStartTime(Calendar startTime, Calendar endTime){
         mStartTime = startTime;
         mEndTime = endTime;
     }
@@ -40,9 +39,6 @@ public abstract class Event {
         mDescription = description;
     }
 
-    public void setPrivate(boolean pr){
-        isPrivate = pr;
-    }
 
     public void setAlarm(boolean alarm, int alarmTime){
         enableAlarm = alarm;
@@ -55,20 +51,16 @@ public abstract class Event {
         return mTitle;
     }
 
-    public Date getStartTime(){
+    public Calendar getStartTime(){
         return mStartTime;
     }
 
-    public Date getEndTime(){
+    public Calendar getEndTime(){
         return mEndTime;
     }
 
     public String getDescription(){
         return mDescription;
-    }
-
-    public boolean isPrivate(){
-        return isPrivate;
     }
 
     public boolean isAlarm(){

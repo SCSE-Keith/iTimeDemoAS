@@ -1,6 +1,7 @@
 package com.colorfulmoment.itimedemo.models;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Activity extends Event {
@@ -10,16 +11,15 @@ public class Activity extends Event {
 
     public Activity(long id,
                     String title,
-                    Date startTime,
-                    Date endTime,
+                    Calendar startTime,
+                    Calendar endTime,
                     String description,
-                    boolean isPrivate,
                     boolean enableAlarm,
                     int alarmTime,
                     ArrayList<User> raiser,
                     Group groupOfRaiser,
                     ArrayList<User> participants){
-        super(id, title, startTime, endTime, description, isPrivate, enableAlarm, alarmTime);
+        super(id, title, startTime, endTime, description, enableAlarm, alarmTime);
         this.mRaiser = mRaiser;
         this.mGroupOfRaiser = mGroupOfRaiser;
         this.mParticipants = mParticipants;

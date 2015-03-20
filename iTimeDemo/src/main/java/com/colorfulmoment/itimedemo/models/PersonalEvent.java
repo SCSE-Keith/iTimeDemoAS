@@ -1,5 +1,6 @@
 package com.colorfulmoment.itimedemo.models;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class PersonalEvent extends Event {
@@ -8,14 +9,13 @@ public class PersonalEvent extends Event {
 
     public PersonalEvent(long id,
                          String title,
-                         Date startTime,
-                         Date endTime,
+                         Calendar startTime,
+                         Calendar endTime,
                          String description,
-                         boolean isPrivate,
                          boolean enableAlarm,
                          int alarmTime,
                          boolean timeOnly){
-        super(id, title, startTime, endTime, description, isPrivate, enableAlarm, alarmTime);
+        super(id, title, startTime, endTime, description, enableAlarm, alarmTime);
         this.timeOnly = timeOnly;
     }
 

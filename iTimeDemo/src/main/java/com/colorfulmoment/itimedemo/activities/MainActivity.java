@@ -9,6 +9,7 @@ import com.colorfulmoment.itimedemo.fragments.ActivitiesFragment;
 import com.colorfulmoment.itimedemo.fragments.GroupFragment;
 import com.colorfulmoment.itimedemo.fragments.PersonalFragment;
 import com.colorfulmoment.itimedemo.fragments.TodayFragment;
+import com.colorfulmoment.itimedemo.tools.Stat;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -23,6 +24,7 @@ import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -45,7 +47,8 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
-		initMenu(ITEM_DRAWABLES);
+        Stat.initStat();
+        initMenu(ITEM_DRAWABLES);
 		initViewPager();
 	}
     
@@ -67,7 +70,7 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	private void initViewPager() {
-        mPager = (ViewPager) findViewById(R.id.main_pager);
+        mPager = (ViewPager)findViewById(R.id.main_pager);
         mFragmentList = new ArrayList<Fragment>();
         
         Fragment todayFragment = TodayFragment.newInstance();  

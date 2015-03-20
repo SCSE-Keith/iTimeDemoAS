@@ -1,5 +1,8 @@
 package com.colorfulmoment.itimedemo.models;
 
+import com.alamkanak.weekview.WeekView;
+import com.alamkanak.weekview.WeekViewEvent;
+
 import java.util.ArrayList;
 
 public class User {
@@ -35,7 +38,16 @@ public class User {
         return mEvent.get(index);
     }
 
-    public void getEventCount(){
-        mEvent.size();
+    public int getEventCount(){
+        return mEvent.size();
+    }
+
+    public int getGroupCount(){
+        return mGroups.size();
+    }
+
+    public WeekViewEvent getWeekViewEvent(int index) {
+        PersonalEvent event = mEvent.get(index);
+        return new WeekViewEvent(event.getId(), event.getTitle(), event.getStartTime(), event.getEndTime());
     }
 }
