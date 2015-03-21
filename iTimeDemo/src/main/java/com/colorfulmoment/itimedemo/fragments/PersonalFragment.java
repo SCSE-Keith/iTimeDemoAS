@@ -43,7 +43,6 @@ public class PersonalFragment extends Fragment implements WeekView.MonthChangeLi
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_personal, container, false);
         mWeekView = (WeekView)view.findViewById(R.id.weekView);
-
         mWeekView.setMonthChangeListener(this);
 
 		return view;
@@ -53,6 +52,7 @@ public class PersonalFragment extends Fragment implements WeekView.MonthChangeLi
     public List<WeekViewEvent> onMonthChange(int newYear, int newMonth) {
         List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
 
+        //向日历中填入事件
         User user = Stat.USERS.get(0);
         for(int i = 0; i < user.getEventCount(); i++) {
             WeekViewEvent event = user.getWeekViewEvent(i);

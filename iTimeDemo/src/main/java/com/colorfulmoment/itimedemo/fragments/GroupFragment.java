@@ -43,14 +43,15 @@ public class GroupFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_group, container, false);
+		View view = inflater.inflate(R.layout.fragment_group, container, false); //找到Fragment视图布局
         ArrayList<Group> groups = new ArrayList<Group>();
+        //取得数据
         for(int i = Stat.USERS.get(0).getGroupCount() - 1; i >= 0; i--){
             groups.add(Stat.USERS.get(0).getGroup(i));
         }
-        mAdapter = new GroupListAdapter(groups, getActivity().getApplicationContext());
+        mAdapter = new GroupListAdapter(groups, getActivity().getApplicationContext()); //实例化控制列表项视图的Adapter
         mListView = (ListView)view.findViewById(R.id.group_list);
-        mListView.setAdapter(mAdapter);
+        mListView.setAdapter(mAdapter); //设置Adapter
 		return view;
 	}
 }

@@ -41,7 +41,9 @@ public class GroupListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
+        //以list_item_group作为表项布局
         view = mInflater.inflate(R.layout.list_item_group, null);
+        //设置表项视图内容
         TextView name = (TextView)view.findViewById(R.id.text_group_name);
         TextView info = (TextView)view.findViewById(R.id.text_other_info);
         TextView member = (TextView)view.findViewById(R.id.text_members_count);

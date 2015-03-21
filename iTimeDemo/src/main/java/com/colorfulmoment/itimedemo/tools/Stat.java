@@ -13,6 +13,7 @@ public abstract class Stat {
     public static ArrayList<User> USERS= new ArrayList<User>();
 
     public static void initStat(){
+        //Demo数据
         USERS.add(new User(0, "周文轩"));
         USERS.add(new User(1, "单堔"));
         USERS.add(new User(2, "郑发淳"));
