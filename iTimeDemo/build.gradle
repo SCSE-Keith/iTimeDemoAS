@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.colorfulmoment.itimedemo"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 21
     }
 

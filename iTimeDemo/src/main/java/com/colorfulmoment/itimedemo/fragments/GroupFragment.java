@@ -14,12 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class GroupFragment extends Fragment {
+public class GroupFragment extends Fragment{
 
     private GroupListAdapter mAdapter;
     private ListView mListView;
@@ -44,13 +45,25 @@ public class GroupFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_group, container, false); //找到Fragment视图布局
-        ArrayList<Group> groups = new ArrayList<Group>();
+        final ArrayList<Group> groups = new ArrayList<Group>();
         //取得数据
         for(int i = Stat.USERS.get(0).getGroupCount() - 1; i >= 0; i--){
             groups.add(Stat.USERS.get(0).getGroup(i));
         }
         mAdapter = new GroupListAdapter(groups, getActivity().getApplicationContext()); //实例化控制列表项视图的Adapter
         mListView = (ListView)view.findViewById(R.id.group_list);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+        mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                return false;
+            }
+        });
         mListView.setAdapter(mAdapter); //设置Adapter
 		return view;
 	}

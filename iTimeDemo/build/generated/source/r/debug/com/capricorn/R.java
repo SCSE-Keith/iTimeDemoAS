@@ -22,13 +22,13 @@ public final class R {
 		public static final int composer_icn_plus_pressed = 0x7f020039;
 	}
 	public static final class id {
-		public static final int control_hint = 0x7f08004c;
-		public static final int control_layout = 0x7f08004b;
-		public static final int item_layout = 0x7f08004a;
+		public static final int control_hint = 0x7f08004f;
+		public static final int control_layout = 0x7f08004e;
+		public static final int item_layout = 0x7f08004d;
 	}
 	public static final class layout {
 		public static final int arc_menu = 0x7f030019;
-		public static final int ray_menu = 0x7f03001f;
+		public static final int ray_menu = 0x7f030022;
 	}
 	public static final class styleable {
 		public static final int[] ArcLayout = { 0x7f010000, 0x7f010002, 0x7f010006 };
