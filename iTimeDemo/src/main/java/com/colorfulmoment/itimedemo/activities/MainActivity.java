@@ -5,33 +5,21 @@ import java.util.ArrayList;
 import com.capricorn.ArcMenu;
 import com.colorfulmoment.itimedemo.R;
 import com.colorfulmoment.itimedemo.adapters.MainPagerAdapter;
+import com.colorfulmoment.itimedemo.adapters.NoScrollViewPager;
 import com.colorfulmoment.itimedemo.fragments.ActivitiesFragment;
 import com.colorfulmoment.itimedemo.fragments.GroupFragment;
 import com.colorfulmoment.itimedemo.fragments.PersonalFragment;
 import com.colorfulmoment.itimedemo.fragments.TodayFragment;
 import com.colorfulmoment.itimedemo.tools.Stat;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.util.DisplayMetrics;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
@@ -41,7 +29,7 @@ public class MainActivity extends FragmentActivity {
      */
 
 	private static final int[] ITEM_DRAWABLES = { R.drawable.composer_camera, R.drawable.composer_music, R.drawable.composer_thought, R.drawable.composer_with };
-    private ViewPager mPager;//页卡内容
+    private NoScrollViewPager mPager;//页卡内容
     private ArcMenu mMenu;
     private ArrayList<Fragment> mFragmentList;
     private long exitTime = 0;
@@ -75,15 +63,20 @@ public class MainActivity extends FragmentActivity {
                 @Override
                 public void onClick(View v) {
                     //点击时按位置切换页面
-                	mPager.setCurrentItem(position);
-                    //Toast.makeText(MainActivity.this, "position:" + position, Toast.LENGTH_SHORT).show();
+                	mPager.setCurrentItem(position, false);
+                    switch(position){
+                        case 0: Toast.makeText(MainActivity.this, "待办事项", Toast.LENGTH_SHORT).show(); break;
+                        case 1: Toast.makeText(MainActivity.this, "个人日程", Toast.LENGTH_SHORT).show(); break;
+                        case 2: Toast.makeText(MainActivity.this, "团队情况", Toast.LENGTH_SHORT).show(); break;
+                        case 3: Toast.makeText(MainActivity.this, "活动广场", Toast.LENGTH_SHORT).show();break;
+                    }
                 }
             });
         }
 	}
 
 	private void initViewPager() {
-        mPager = (ViewPager)findViewById(R.id.main_pager); //承载各页面的ViewPager
+        mPager = (NoScrollViewPager)findViewById(R.id.main_pager); //承载各页面的ViewPager
         mFragmentList = new ArrayList<Fragment>(); //页面上对应的Fragment链表
 
         //初始化所有Fragment并全部加入链表
@@ -98,7 +91,7 @@ public class MainActivity extends FragmentActivity {
         mFragmentList.add(activitiesFragment);
 
         mPager.setAdapter(new MainPagerAdapter(getSupportFragmentManager(), mFragmentList)); //为ViewPager设置Adapter
-        mPager.setCurrentItem(0); //起始页面为第1页
+        mPager.setCurrentItem(0, false); //起始页面为第1页
     }
 	
 	@Override

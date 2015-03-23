@@ -16,7 +16,11 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
+
+import static java.lang.System.*;
 
 public class PersonalFragment extends Fragment implements WeekView.MonthChangeListener{
 
@@ -41,10 +45,11 @@ public class PersonalFragment extends Fragment implements WeekView.MonthChangeLi
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+        Date date = new Date(currentTimeMillis());
 		View view = inflater.inflate(R.layout.fragment_personal, container, false);
         mWeekView = (WeekView)view.findViewById(R.id.weekView);
         mWeekView.setMonthChangeListener(this);
-
+        mWeekView.goToHour(date.getHours());
 		return view;
 	}
 
