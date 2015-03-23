@@ -1579,12 +1579,12 @@ containing a value of this type.
         public static final int disableHome=0x7f08000c;
         public static final int dropdown=0x7f08001c;
         public static final int edit_query=0x7f08003c;
-        public static final int edit_text_input=0x7f080055;
+        public static final int edit_text_input=0x7f080056;
         public static final int end=0x7f080014;
         public static final int expand_activities_button=0x7f08002b;
         public static final int expanded_menu=0x7f080031;
         public static final int friday=0x7f08001e;
-        public static final int group_list=0x7f080050;
+        public static final int group_list=0x7f080051;
         public static final int home=0x7f080004;
         public static final int homeAsUp=0x7f08000d;
         public static final int icon=0x7f08002f;
@@ -1621,24 +1621,26 @@ containing a value of this type.
         public static final int showCustom=0x7f08000f;
         public static final int showHome=0x7f080010;
         public static final int showTitle=0x7f080011;
+        public static final int spinner_group_type=0x7f080050;
         public static final int split_action_bar=0x7f080007;
         public static final int submit_area=0x7f080045;
         public static final int sunday=0x7f080021;
-        public static final int switch_item=0x7f080054;
+        public static final int switch_item=0x7f080055;
         public static final int tabMode=0x7f08000b;
-        public static final int text_gap=0x7f080052;
-        public static final int text_group_name=0x7f080056;
+        public static final int text_gap=0x7f080053;
+        public static final int text_group_name=0x7f080057;
+        public static final int text_group_type=0x7f08005a;
         public static final int text_head_group_add_modify=0x7f08004a;
-        public static final int text_members_count=0x7f080058;
-        public static final int text_other_info=0x7f080057;
-        public static final int text_title=0x7f080053;
+        public static final int text_members_count=0x7f080059;
+        public static final int text_other_info=0x7f080058;
+        public static final int text_title=0x7f080054;
         public static final int thursday=0x7f080022;
         public static final int title=0x7f080030;
         public static final int tuesday=0x7f080023;
         public static final int up=0x7f080008;
         public static final int useLogo=0x7f080012;
         public static final int wednesday=0x7f080024;
-        public static final int weekView=0x7f080051;
+        public static final int weekView=0x7f080052;
         public static final int withText=0x7f08001a;
         public static final int wrap_content=0x7f08001d;
     }
@@ -1681,7 +1683,8 @@ containing a value of this type.
         public static final int list_item_add_modify_group_text=0x7f030020;
         public static final int list_item_group=0x7f030021;
         public static final int ray_menu=0x7f030022;
-        public static final int support_simple_spinner_dropdown_item=0x7f030023;
+        public static final int spinner_item=0x7f030023;
+        public static final int support_simple_spinner_dropdown_item=0x7f030024;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0a0000;

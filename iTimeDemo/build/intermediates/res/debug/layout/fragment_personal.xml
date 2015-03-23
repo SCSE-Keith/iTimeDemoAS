@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:eventTextColor="@android:color/white"
-        app:textSize="12sp"
+        app:textSize="11sp"
         app:hourHeight="60dp"
         app:headerColumnPadding="8dp"
         app:headerColumnTextColor="#8f000000"
